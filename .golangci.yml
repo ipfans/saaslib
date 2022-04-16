@@ -1,0 +1,47 @@
+# Options for analysis running.
+
+run:
+  timeout: 10m
+
+linters-settings:
+  staticcheck:
+    checks:
+      - all
+      - "-SA1029"
+
+  gocyclo:
+    min-complexity: 18
+
+linters:
+  enable:
+    - goimports
+    - gofumpt
+    - gocyclo
+    - gosec
+    - bodyclose
+    - unconvert
+    - gocritic
+    - unused
+    - deadcode
+    - staticcheck
+    - gosimple
+    - structcheck
+    - varcheck
+    - ineffassign
+    - typecheck
+    - stylecheck
+    - unparam
+    - nakedret
+    - gochecknoinits
+    - depguard
+    - misspell
+    - megacheck
+    - errorlint
+    - gofumpt
+    - makezero
+    - nilerr
+    - noctx
+    - sqlclosecheck
+    - rowserrcheck
+    - tparallel
+    - wastedassign

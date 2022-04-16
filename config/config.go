@@ -25,6 +25,7 @@ type config struct {
 // Init returns a new config instance.
 // Default args:
 //   - ./etc/conf/config.yaml
+// nolint:nakedret
 func Init(opt ...Option) (conf Config, err error) {
 	var o option
 	c := &config{
@@ -75,6 +76,7 @@ func (c *config) readSingleFile(o option) (err error) {
 	return
 }
 
+//nolint:nilerr
 func (c *config) batchFiles(o option) error {
 	err := filepath.Walk(o.localDir, func(path string, info os.FileInfo, err error) (e error) {
 		if info.IsDir() || err != nil {
@@ -119,7 +121,7 @@ func (c *config) readLocalConfig(o option) (err error) {
 		err = c.readSingleFile(o)
 		return
 	} else {
-		c.batchFiles(o)
+		err = c.batchFiles(o)
 	}
 
 	return

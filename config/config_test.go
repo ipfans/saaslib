@@ -17,7 +17,9 @@ func TestInit(t *testing.T) {
 		server.WaitForLeader(t)
 	}
 
-	defer server.Stop()
+	defer func() {
+		_ = server.Stop()
+	}()
 
 	b, err := os.ReadFile("./testfixtures/remote.yaml")
 	require.NoError(t, err)
@@ -182,7 +184,9 @@ func Test_Unmarshal(t *testing.T) {
 		server.WaitForLeader(t)
 	}
 
-	defer server.Stop()
+	defer func() {
+		_ = server.Stop()
+	}()
 
 	b, err := os.ReadFile("./testfixtures/remote.yaml")
 	require.NoError(t, err)

@@ -71,7 +71,7 @@ func (m Metadata) Append(k string, val string) {
 
 // Delete removes the values for a given key k which is converted to lowercase
 // before removing it from md.
-func (md Metadata) Delete(k string) {
+func (m Metadata) Delete(k string) {
 	k = strings.ToLower(k)
-	delete(md, k)
+	delete(m, k)
 }
