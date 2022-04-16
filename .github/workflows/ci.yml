@@ -27,6 +27,17 @@ jobs:
         with:
           go-version: ${{ matrix.go }}
 
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ~/go/pkg/mod
+            ~/.cache/go-build
+            ~/Library/Caches/go-build
+            ~\AppData\Local\go-build
+          key: ${{ runner.os }}-go-${{ matrix.go-version }}-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-${{ matrix.go-version }}-
+
       - name: Install denpendencies for integration testing
         run: |
           curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -

@@ -1,10 +1,12 @@
 module github.com/ipfans/saaslib
 
-go 1.18
+go 1.17
 
 require (
+	github.com/arthurkiller/rollingwriter v1.1.3
 	github.com/hashicorp/consul/sdk v0.9.0
 	github.com/morikuni/failure v0.14.0
+	github.com/rs/zerolog v1.26.1
 	github.com/spf13/viper v1.11.0
 	github.com/stretchr/testify v1.7.1
 )
@@ -14,7 +16,6 @@ require (
 	cloud.google.com/go/compute v1.5.0 // indirect
 	cloud.google.com/go/firestore v1.6.1 // indirect
 	github.com/armon/go-metrics v0.3.10 // indirect
-	github.com/arthurkiller/rollingwriter v1.1.3 // indirect
 	github.com/coreos/go-semver v0.3.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/fatih/color v1.13.0 // indirect
@@ -45,7 +46,6 @@ require (
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/robfig/cron v1.1.0 // indirect
-	github.com/rs/zerolog v1.26.1 // indirect
 	github.com/sagikazarmark/crypt v0.5.0 // indirect
 	github.com/spf13/afero v1.8.2 // indirect
 	github.com/spf13/cast v1.4.1 // indirect
