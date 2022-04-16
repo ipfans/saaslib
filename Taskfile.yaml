@@ -10,8 +10,8 @@ tasks:
     cmds:
       - |
         go test -tags dynamic -v `go list ./...` \
-          -coverprofile=coverage.out -cover -failfast
-      - go tool cover -func coverage.out
+          -coverprofile=coverage.txt -cover -failfast
+      - go tool cover -func coverage.txt
 
   chglog:
     cmds:
